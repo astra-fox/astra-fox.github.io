@@ -1,1 +1,18 @@
- .sourceCode pre{padding:0rem}pre code a{color:unset}pre code a:hover{color:unset}figure{display:inline-block;text-align:center;margin:5px}figure img{vertical-align:top}figure div{margin:auto}figure figcaption{font-style:oblique}.author{font-style:italic;margin-bottom:2.5%;margin-left:1%}.has-background-image{background:url("/images/site/This_is_math.jpg") center center;background-size:cover}ol{list-style-position:inside}
+ .sourceCode pre{padding:0rem}pre code a{color:unset}pre code a:hover{color:unset}figure{display:inline-block;text-align:center;margin:5px}figure img{vertical-align:top}figure div{margin:auto}figure figcaption{font-style:oblique}
+.author{
+ font-style:italic;
+ margin-bottom:2.5%;
+ margin-left:1%;
+}
+
+
+.has-background-image{
+ background:url("/images/site/This_is_math.jpg") center center;
+ background-size:cover;
+ background-position:0% 57.5%;
+}
+
+
+ol{
+ list-style-position:inside;
+}
