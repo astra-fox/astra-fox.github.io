@@ -59,11 +59,11 @@ def balanceada(f):
 
 --
 
-- Viendo la complejidad de esta algoritmo, sin tener encuenta la complejidad de \\(f\\), tenemos que se debe computar DOS veces \\(f\\); una para \\(f(0)\\) y otra para \\(f(1)\\).
+- Mirando la complejidad de esta algoritmo, sin tener en cuenta la implementación de \\(f\\), tenemos que se debe computar DOS veces \\(f\\); una para \\(f(0)\\) y otra para \\(f(1)\\).
 
 --
 
-- ¿Podríamos solucionar el problema sin computar dos veces \\(f\\)?
+- ¿Existe un algoritmo que no requiera computar dos veces \\(f\\)?
 
 ---
 
@@ -91,7 +91,7 @@ $$ X | 1 \rangle = | 0 \rangle$$
 
 --
 
-- Sin embargo este operador es unitario y por tanto una interpretación mas "correcta" sería la de una rotación de \\(\pi \\) al rededor del eje X, en la esfera de Bloch.
+- Sin embargo este operador es unitario y por tanto una mejor interpretación es de una rotación de \\(\pi \\) al rededor del eje X, en la esfera de Bloch.
 
 ---
 
@@ -195,7 +195,7 @@ $$ Z |1 \rangle = -| 1 \rangle $$
 
 --
 
-- Sin embargo este operador es unitario y por tanto una interpretación mas "correcta" sería la de una rotación de \\(\pi \\) al rededor del eje Z, en la esfera de Bloch.
+- Y de igual manera este operador también se puede ver como una rotación de \\(\pi \\) al rededor del eje Z, en la esfera de Bloch.
 
 ---
 
@@ -214,32 +214,32 @@ $$ Z |1 \rangle = -| 1 \rangle $$
 
 # Operador Pauli-Z
 
-- La importancia de este operador radica en que las medidas las haremos respecto a esta. Esto se llamama una medida-Z.
+- La importancia de este operador radica en que las medidas se realizan respecto a este. Esto se le dice una medida-Z.
 
 --
 
 - Como la descomposición espectral de Pauli-Z es:
 $$ Z = | 0 \rangle \langle 0 | - | 1 \rangle \langle 1 |$$
 
-Podemos ver que la base computacional que usamos está respecto a la base de autoestados de Pauli-Z.
+Se puede ver que la base computacional que usamos está respecto a la base de autoestados de Pauli-Z.
 
 --
 
-- En qiskit nuestras medidas siempre se haran respecto a Pauli-Z
+- En qiskit nuestras medidas siempre se relizan respecto a Pauli-Z.
 
 --
 
-- Sin embargo hay que tener encuenta que cualquier medida se puede hacer respecto a cualquier observable, sin embargo estas medidas nos dan respecto a la base de autoestados de ese operador.
+- Hay que tener en cuenta que cualquier medida se puede hacer respecto a cualquier observable, pero estas medidas nos dan respecto a la base de autoestados de ese operador.
 
 --
 
-- Para que un operador \\( \mathcal{X} \\) cualquiera tenga la misma base de autoestados de Pauli-Z es necesario y suficiente que se cumpla \\( [\mathcal{X}, Z] = 0 \\). Esto es consecuencía del teorema de descomposición espectral.
+- Para que un operador \\( \mathcal{X} \\) cualquiera tenga la misma base de autoestados de Pauli-Z es necesario y suficiente que se cumpla \\( [\mathcal{X}, Z] = 0 \\).
 
 ---
 
 # Algoritmo de Deutsch
 
-Como dijimos al principio, para probar si una función es constante o balanceada es mas que suficiente mirar si se cumple \\( f(0) = f(1) \\) esta condición equivale a ver si \\( f(0) \oplus f(1) \\) es igual a \\(1\\) o \\(0\\), donde \\( \oplus \\) es la suma en \\( \mathbb{Z}/2\mathbb{Z} \\).
+Como se dijo al principio, para probar si una función es constante o balanceada es mas que suficiente mirar si cumple \\( f(0) = f(1) \\) esta condición equivale a ver si \\( f(0) \oplus f(1) \\) es igual a \\(1\\) o \\(0\\), donde \\( \oplus \\) es la suma en \\( \mathbb{Z}/2\mathbb{Z} \\).
 
 --
 
@@ -247,15 +247,15 @@ Como dijimos al principio, para probar si una función es constante o balanceada
 
 --
 
-- Se tienen dos qubit. El primero esta en \\( |0 \rangle \\) y el segundo \\(|1 \rangle \\). 
+- - Se tienen dos qubit. El primero esta en \\( |0 \rangle \\) y el segundo \\(|1 \rangle \\). 
 
 --
 
-- Aplicamos Hadamard a ambos qubits. Este paso se le llama preparar los qubits.
+- - Aplicamos Hadamard a ambos qubits. Este paso se le llama preparar los qubits.
 
 --
 
-- Se aplica a ambos qubit el operador unitario que contiene la información sobre \\(f \\), a esto le decimos un oraculo, pues no conocemos su implementación. El operador unitario actua en la base de la siguiente forma:
+- - Se construye un operador unitario que contiene la información sobre \\(f \\), a este operador le decimos un oraculo, pues no conocemos su implementación a priori. El operador unitario actua en la base de \\(\mathbb{H} \otimes \mathbb{H} \\) de la siguiente forma:
 $$U| x \rangle | y \rangle = | x \rangle | f(x) \oplus y \rangle$$
 Con \\( x, y \in \\{ 0, 1\\}\\).
 
@@ -263,19 +263,19 @@ Con \\( x, y \in \\{ 0, 1\\}\\).
 
 # Algoritmo de Deutsch
 
-- Aplicamos Hadamard al primer qubit.
+- - Luego aplicamos Hadamard al primer qubit.
 
 --
 
-- Hacemos una medida respecto al operador Pauli-Z
+- - Realizamos una medida-Z en el primer qubit.
 
 --
 
-- Si \\(f\\) es balanceada medimos \\(|0\rangle\\), en el otro caso medimos \\(|1\rangle\\).
+- - Si \\(f\\) es balanceada medimos \\(|0\rangle\\), en el otro caso medimos \\(|1\rangle\\).
 
 --
 
-- Su circuito en qiskit es el siguiente:
+- El circuito en qiskit asociado es:
 
 <center>
     <figure>
@@ -290,7 +290,7 @@ Con \\( x, y \in \\{ 0, 1\\}\\).
 
 ¿Por qué funciona?
 
-El núcleo de la solución es el operador \\( U| x \rangle | y \rangle = | x \rangle | f(x) \oplus y \rangle \\) este operador actua una sola vez sobre el estado superpuesto entre el qubit 1 y el qubit 2. Haciendo que la operación para saber si f es balanceada o constante sea de una sola aplicación de \\( f \\), a diferencia de la versión en python que computaba dos veces \\(f \\).
+El núcleo de la solución es el operador \\( U| x \rangle | y \rangle = | x \rangle | f(x) \oplus y \rangle \\) este operador actua una sola vez sobre el estado superpuesto entre el qubit uno y el qubit dos. Haciendo que la operación para saber si \\(f\\) es balanceada o constante sea de una sola aplicación de \\( f \\), o sea \\( U \\), a diferencia de la versión en python que computaba dos veces \\(f \\).
 
 --
 
@@ -325,13 +325,13 @@ Podemos ver que si \\( f(0) \oplus f(1) = 0\\) por tanto \\( |\psi\rangle = |0\r
 
 --
 
-De esta menera siempre que hagamos una medida respecto a la base computacional, obtendremos el \\( 100\\)% de las veces la solución al problema de Deutsch.
+De esta manera siempre que hagamos una medida respecto a la base computacional, obtendremos el \\( 100\\)% de las veces la solución al problema de Deutsch.
 
 ---
 
 # Implementación en Qiskit
 
-Como vimos anteriormente el circuito en qiskit es
+Como vimos anteriormente el circuito en qiskit es:
 
 <center>
     <figure>
@@ -348,7 +348,7 @@ Por tanto solo queda implementar un oraculo de \\(f \\).
 
 --
 
-- Si \\( f \\) es una función balanceada equivalente a la función identidad de \\(\\{ 0, 1\\} \\), basta tomar \\(U =  \text{X-Controlada} \\)
+- Si \\( f \\) es una función balanceada equivalente a la función identidad de \\(\\{ 0, 1\\} \\), basta tomar \\(U =  \text{X-Controlado} \\).
 
 ---
 
@@ -362,13 +362,13 @@ Por tanto solo queda implementar un oraculo de \\(f \\).
 
 --
 
-- ¿Se puede optimizar mas el algoritmo mostrado, se puede hacer en un solo qubit?
+- ¿Se puede optimizar mas el algoritmo mostrado, se puede hacer en un solo qubit?, en caso afirmativo: ¿Puede escribir los respectivos circuitos cuánticos para los cuatro casos de \\(f \\)?, y en caso negativo: ¿Por qué no?
 
 ---
 
 class: center, middle
 
-Estas diapositiva se encuentra en:
+Esta diapositiva se encuentra en:
 http://azthor.github.io/documents/slides/ES-deutsch.html
 
 ---
