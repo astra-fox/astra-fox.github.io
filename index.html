@@ -47,7 +47,7 @@
                     
 <div class="index-post">
     <article>
-    <h1 class="title is-4">Matemáticas básicas para computación cuántica</h1>
+    <h1 class="title is-4">Notas en álgebra lineal</h1>
     <section class="author">
         Posted on September 11, 2019
         
@@ -59,7 +59,7 @@
         
     </section>
     <section>
-        <p>Para poder empezar a estudiar las bases de la computación cuántica es necesario conocer algo de álgebra linea. Hay que aclarar que la mayoría de estos resultados solo aplicán en espacios de dimensión finita, así que muchos de los conceptos de un curso normal de álgebra lineal se traducen muy facilmente, con la salvedad de que aquí tratamos de espacios vectoriales definidos sobre los complejos, y no sobre los reales.</p>
+        <p>Para poder empezar a estudiar las bases de la computación cuántica es necesario conocer algo de álgebra linea. Se debé aclarar que la mayoría de estos resultados solo aplicán en espacios de dimensión finita.</p>
 <p><span class="math inline">\(~\)</span></p>
 <p><strong><em>Definición 1</em></strong>: Sean <span class="math inline">\(\mathbb{C}\)</span> el campo de los números complejos, <span class="math inline">\(\mathbb{H}\)</span> un espacio vectorial definido sobre <span class="math inline">\(\mathbb{C}\)</span>, y sea <span class="math inline">\(\langle-,-\rangle: \mathbb{H} \times \mathbb{H} \to \mathbb{C}\)</span> una función tal que para todo <span class="math inline">\(v, w, u \in \mathbb{H}\)</span> y para todo <span class="math inline">\(\alpha \in \mathbb{C}\)</span> cumple qué:</p>
 <ol type="1">
@@ -79,29 +79,95 @@
 <p><span class="math inline">\(~\)</span></p>
 <p><strong><em>Definición 3</em></strong>: Sea <span class="math inline">\(\mathbb{H}\)</span> un espacio de Hilbert. Definimos su dual algebraico como el conjunto de todas las transformaciones lineales que van de <span class="math inline">\(\mathbb{H}\)</span> a <span class="math inline">\(\mathbb{C}\)</span>, y lo denotamos como <span class="math inline">\(\mathbb{H}^{*}\)</span>.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong><em>Teorema 1</em></strong> “De represetación de Riesz”: Sea <span class="math inline">\(\mathbb{H}\)</span> un espacio de Hilbert. Y sea <span class="math inline">\(f \in \mathbb{H}^{*}\)</span>, entonces existe un elemento <span class="math inline">\(v \in \mathbb{H}\)</span> tal que para todo <span class="math inline">\(w \in \mathbb{H}\)</span>, <span class="math inline">\(f(w) = \langle v, w \rangle\)</span>, mas aún <span class="math inline">\(||f||_{H^{*}} = ||v||_{H}\)</span>.</p>
+<p><strong><em>Teorema 1</em></strong> “De represetación de Riesz”: Sea <span class="math inline">\(\mathbb{H}\)</span> un espacio de Hilbert. Y sea <span class="math inline">\(f \in \mathbb{H}^{*}\)</span>, entonces existe un elemento <span class="math inline">\(v \in \mathbb{H}\)</span> tal que para todo <span class="math inline">\(w \in \mathbb{H}\)</span>, <span class="math inline">\(f(w) = \langle v, w \rangle\)</span>, mas aún <span class="math inline">\(||f||_{H^{*}} = ||v||_{H}\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p>De lo anterior podemos ver que en espacios de Hilbert cada vector dual esta asociado a un vector en <span class="math inline">\(\mathbb{H}\)</span> y por tanto este transformación lineal se puede representar a travez del producto interno, en notación: <span class="math inline">\(f_{v}(-) = \langle v, - \rangle\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
-<p>La notación de Dirac se justifica apartir del teorema de representación. Los vectores en el espacio de Hilbert los denotamos como <span class="math inline">\(| \psi \rangle\)</span>, y al vector dual asociado a este se denota como <span class="math inline">\(\langle \psi |\)</span>. De esta menera el producto interno de dos vectores queda representado por medio de la aplicación del vector dual sobre el vector, esto es <span class="math inline">\(\langle v, w \rangle = \langle v | w \rangle\)</span>. Aunqué en este punto las ventajas de esta notación no son tan evidentes, mas adelante cuando representemos las transformaciones lineal en terminos de operaciones de vectores de la base del espacio de Hilbert podremos ver sus ventajas.</p>
+<p>La notación de Dirac se justifica apartir del teorema de representación. Los vectores en el espacio de Hilbert los denotamos como <span class="math inline">\(| \psi \rangle\)</span>, y al vector dual asociado a este se denota como <span class="math inline">\(\langle \psi |\)</span>. De esta manera el producto interno de dos vectores queda representado por medio de la aplicación del vector dual sobre el vector, esto es <span class="math inline">\(\langle v, w \rangle = \langle v | w \rangle\)</span>. Aunqué en este punto las ventajas de esta notación no son tan evidentes, mas adelante cuando representemos las transformaciones lineal en terminos de operaciones de vectores de la base del espacio de Hilbert podremos ver sus ventajas.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong><em>Definición 3</em></strong>: Sea <span class="math inline">\(B = \{ v_{i} \}_{i \in I}\)</span> un conjunto de vectores de <span class="math inline">\(\mathbb{H}\)</span>. Llamamos al espacio generado por B, denodato por <span class="math inline">\(\langle B \rangle_{G}\)</span>, como el conjunto posible de todas las posibles combinaciones lineales de los vectores de <span class="math inline">\(B\)</span>. Si <span class="math inline">\(\langle B \rangle_{G} = \mathbb{H}\)</span> decimos que <span class="math inline">\(B\)</span> genera a <span class="math inline">\(\mathbb{H}\)</span>. Y ademas si <span class="math inline">\(B\)</span> es linealmende independiente, entonces <span class="math inline">\(B\)</span> es una base de <span class="math inline">\(\mathbb{H}\)</span>.</p>
+<p><strong><em>Definición 4</em></strong>: Sea <span class="math inline">\(B = \{ v_{i} \}_{i \in I}\)</span> un conjunto de vectores de <span class="math inline">\(\mathbb{H}\)</span>. Llamamos al espacio generado por <span class="math inline">\(B\)</span>, denotado por <span class="math inline">\(\langle B \rangle_{G}\)</span>, como el conjunto posible de todas las posibles combinaciones lineales de los vectores de <span class="math inline">\(B\)</span>. Si <span class="math inline">\(\langle B \rangle_{G} = \mathbb{H}\)</span> decimos que <span class="math inline">\(B\)</span> genera a <span class="math inline">\(\mathbb{H}\)</span>. Y ademas si <span class="math inline">\(B\)</span> es linealmende independiente, entonces <span class="math inline">\(B\)</span> es una base de <span class="math inline">\(\mathbb{H}\)</span>.</p>
 <p><span class="math inline">\(~\)</span></p>
 <p>Es fácil ver que <span class="math inline">\(\langle B \rangle_{G}\)</span> es un subespacio vectorial de <span class="math inline">\(\mathbb{H}\)</span>.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong><em>Definición 4</em></strong>: Sean <span class="math inline">\(v, w \in \mathbb{H}\)</span>. Si <span class="math inline">\(\langle v, w \rangle = 0\)</span>, decimos que <span class="math inline">\(v\)</span> y <span class="math inline">\(w\)</span> “son ortogonales respecto al producto interno <span class="math inline">\(\langle -, - \rangle\)</span>.” Si el producto interno al cual se refiere es claro, entonces decimos simplemente “son ortogonales.” Sea <span class="math inline">\(B\)</span> el conjunto de la definición 3, si los vectores de <span class="math inline">\(B\)</span> son ortogonales entre si y ademas <span class="math inline">\(B\)</span> es una base, entonces decimos que <span class="math inline">\(B\)</span> es una base ortogonal. Y si la normal de los vectores es 1, decimos que <span class="math inline">\(B\)</span> es una base ortonormal.</p>
+<p><strong><em>Definición 5</em></strong>: Sean <span class="math inline">\(v, w \in \mathbb{H}\)</span>. Si <span class="math inline">\(\langle v, w \rangle = 0\)</span>, decimos que <span class="math inline">\(v\)</span> y <span class="math inline">\(w\)</span> “son ortogonales respecto al producto interno <span class="math inline">\(\langle -, - \rangle\)</span>.” Si el producto interno al cual se refiere es claro, entonces decimos simplemente “son ortogonales.” Sea <span class="math inline">\(B\)</span> el conjunto de la definición 3, si los vectores de <span class="math inline">\(B\)</span> son ortogonales entre si y ademas <span class="math inline">\(B\)</span> es una base, entonces decimos que <span class="math inline">\(B\)</span> es una base ortogonal. Y si la normal de los vectores es 1, decimos que <span class="math inline">\(B\)</span> es una base ortonormal.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong><em>Definición 5</em></strong>: Sea <span class="math inline">\(B = \{v_{i}\}_{i \in I}\)</span> una base ortonormal de <span class="math inline">\(\mathbb{H}\)</span>. Y sea <span class="math inline">\(v \in \mathbb{H}\)</span>. Claramente existen <span class="math inline">\(\alpha_{i} \in \mathbb{H}\)</span> tales que <span class="math inline">\(v = \sum_{i \in I} \alpha_{i} v_{i}\)</span>. Ha estos coeficientes le llamamos la representación de <span class="math inline">\(v\)</span> en terminos de la base <span class="math inline">\(B\)</span>, y usualmente se escribé como un vector columna denotado como <span class="math inline">\(|v|_{B}\)</span>, esto es:</p>
+<p><strong><em>Definición 6</em></strong>: Sea <span class="math inline">\(B = \{v_{i}\}_{i \in I}\)</span> una base ortonormal de <span class="math inline">\(\mathbb{H}\)</span>. Y sea <span class="math inline">\(v \in \mathbb{H}\)</span>. Claramente existen <span class="math inline">\(\alpha_{i} \in \mathbb{H}\)</span> tales que <span class="math inline">\(v = \sum_{i \in I} \alpha_{i} v_{i}\)</span>. Ha estos coeficientes le llamamos la representación de <span class="math inline">\(v\)</span> en terminos de la base <span class="math inline">\(B\)</span>, y usualmente se escribé como un vector columna denotado como <span class="math inline">\(|v|_{B}\)</span>, esto es:</p>
 <p><span class="math display">\[
 |v|_{B} = \begin{bmatrix}
             \alpha_{1} \\\
             \alpha_{2} \\\
-            . \\\
+            \vdots \\\
             \alpha_{n}
           \end{bmatrix}
 \]</span></p>
 <p>Cuando la base es clara, en vez de escribir <span class="math inline">\(|v|_{B}\)</span> se escribé simplemente <span class="math inline">\(v\)</span>.</p>
 <p><span class="math inline">\(~\)</span></p>
+<p>Una pregunta natural al ver esta difinición es: ¿Cual es la representación de los vectores de <span class="math inline">\(\mathbb{H}^{*}\)</span>?.</p>
+<p>Por la misma definición, necesitamos una base para representarla. Si tenemos que <span class="math inline">\(B = \{e_{i}\}_{i \in I}\)</span> es una base ortonormal de <span class="math inline">\(\mathbb{H}\)</span>, podemos construir una base ortonormal para <span class="math inline">\(\mathbb{H}^{*}\)</span> de la siguiente forma: Sea <span class="math inline">\(B^{*} = \{e^{i}\}_{i \in I}\)</span> un subconjunto de <span class="math inline">\(\mathbb{H}^{*}\)</span>, tales que <span class="math inline">\(e^{i}(e_{j}) = \delta_{ij}\)</span>. Se puede ver que <span class="math inline">\(B^{*}\)</span> es efectivamente una base ortonormal de <span class="math inline">\(\mathbb{H}^{*}\)</span>. A <span class="math inline">\(B^{*}\)</span> se le dice la base dual de <span class="math inline">\(B\)</span>. Por tanto si: <span class="math display">\[
+|v|_{B} = \begin{bmatrix}
+            \alpha_{1} \\\
+            \alpha_{2} \\\
+            \vdots \\\
+            \alpha_{n}
+          \end{bmatrix}
+\]</span> Entonces, la representación del vector dual asociado <span class="math inline">\(f_{v} \in \mathbb{H}^{*}\)</span> es: <span class="math display">\[
+|f_{v}|_{B^{*}} = \begin{bmatrix}
+            \overline{\alpha_{1}} \\\
+            \overline{\alpha_{2}} \\\
+            \vdots \\\
+            \overline{\alpha_{n}}
+          \end{bmatrix}
+\]</span></p>
+<p>Si nuestro producto punto es de la forma <span class="math inline">\(\langle v, w \rangle = \sum_{i \in I} \overline{\alpha_{i}} \beta_{i}\)</span>, entonces es inmediato que <span class="math inline">\(f_{v}(w) = \langle v, w \rangle = \sum_{i \in I} \overline{\alpha_{i}} \beta_{i}\)</span> y por tanto: <span class="math display">\[
+\langle v, w \rangle = \begin{bmatrix}
+                        \overline{\alpha_{1}} &amp; \overline{\alpha_{2}} &amp; \dots &amp; \overline{\alpha_{n}}
+                       \end{bmatrix}
+                       \begin{bmatrix}
+                        \beta_{1} \\\
+                        \beta_{2} \\\
+                        \vdots \\\
+                        \beta_{n}
+                       \end{bmatrix}
+                     = |f_{v}|_{B^{*}}^{T}|v|_{B}
+\]</span></p>
+<p>De esta manera si el ket <span class="math inline">\(|\psi\rangle \in \mathbb{H}\)</span> es representado de la siguiente forma respecto a una base <span class="math inline">\(B\)</span>: <span class="math display">\[
+|\psi\rangle = \begin{bmatrix}
+            \alpha_{1} \\\
+            \alpha_{2} \\\
+            \vdots \\\
+            \alpha_{n}
+          \end{bmatrix}
+\]</span> Entonces el bra asociado al ket es: <span class="math display">\[
+\langle \psi | = \begin{bmatrix}
+            \overline{\alpha_{1}} &amp;
+            \overline{\alpha_{2}} &amp;
+            \dots &amp;
+            \overline{\alpha_{n}}
+          \end{bmatrix}
+\]</span></p>
+<p>En otras palabras: !El bra del ket es la transpuesta del vector columna que representa al vector dual!.</p>
+<p><span class="math inline">\(~\)</span></p>
+<p>Gracias a esta representación podemos definir la siguiente operación entre kets y bras, llamada producto exterior, en terminos de la multiplicación de matrices, esto es:</p>
+<p><span class="math display">\[
+|\phi \rangle \langle \psi | =  \begin{bmatrix}
+                                  \beta_{1} \\\
+                                  \beta_{2} \\\
+                                  \vdots \\\
+                                  \beta_{n}
+                                \end{bmatrix}
+                                \begin{bmatrix}
+                                  \overline{\alpha_{1}} &amp;
+                                  \overline{\alpha_{2}} &amp;
+                                  \dots &amp;
+                                  \overline{\alpha_{n}}
+                                \end{bmatrix}
+                             =  \begin{bmatrix}
+                                  \beta_{1}\overline{\alpha_{1}} &amp; \beta_{1}\overline{\alpha_{2}} &amp; \dots &amp;\beta_{1}\overline{\alpha_{n}} \\\
+                                  \beta_{2}\overline{\alpha_{1}} &amp; \beta_{2}\overline{\alpha_{2}} &amp; \dots &amp;\beta_{2}\overline{\alpha_{n}}\\\
+                                  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\
+                                  \beta_{n}\overline{\alpha_{1}} &amp; \beta_{2}\overline{\alpha_{2}} &amp; \dots &amp;\beta_{n}\overline{\alpha_{n}}\\\
+                                \end{bmatrix}
+\]</span></p>
     </section>
 </article>
 
