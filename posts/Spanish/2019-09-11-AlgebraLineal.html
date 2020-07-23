@@ -122,7 +122,8 @@
             \overline{\alpha_{n}}
           \end{bmatrix}
 \]</span></p>
-<p>Si nuestro producto punto es de la forma <span class="math inline">\(\langle v, w \rangle = \sum_{i \in I} \overline{\alpha_{i}} \beta_{i}\)</span>, entonces es inmediato que <span class="math inline">\(f_{v}(w) = \langle v, w \rangle = \sum_{i \in I} \overline{\alpha_{i}} \beta_{i}\)</span> y por tanto: <span class="math display">\[
+<p>Y como <span class="math inline">\(f_{v}(w) = \langle v, w \rangle = |f_{v}|_{B^{*}}^{T}|v|_{B}\)</span> entonces:</p>
+<p><span class="math display">\[
 \langle v, w \rangle = \begin{bmatrix}
                         \overline{\alpha_{1}} &amp; \overline{\alpha_{2}} &amp; \dots &amp; \overline{\alpha_{n}}
                        \end{bmatrix}
@@ -132,7 +133,6 @@
                         \vdots \\\
                         \beta_{n}
                        \end{bmatrix}
-                     = |f_{v}|_{B^{*}}^{T}|v|_{B}
 \]</span></p>
 <p>De esta manera si el ket <span class="math inline">\(|\psi\rangle \in \mathbb{H}\)</span> es representado de la siguiente forma respecto a una base <span class="math inline">\(B\)</span>: <span class="math display">\[
 |\psi\rangle = \begin{bmatrix}
@@ -151,7 +151,7 @@
 \]</span></p>
 <p>En otras palabras: !El bra del ket es la transpuesta del vector columna que representa al vector dual!.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p>Gracias a esta representación podemos definir la siguiente operación entre kets y bras, llamada producto exterior, en terminos de la multiplicación de matrices, esto es:</p>
+<p>Gracias a esta representación podemos definir la siguiente operación entre kets y bras, llamada producto exterior <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, en términos de la multiplicación de matrices, esto es:</p>
 <p><span class="math display">\[
 |\phi \rangle \langle \psi | =  \begin{bmatrix}
                                   \beta_{1} \\\
@@ -177,9 +177,9 @@
 + Representación de operadores y vectores
 </h5>
 <p><span class="math inline">\(~\)</span></p>
-<p>En la definición 6 establecimos que las matrices columna corresponden a vectores, y sus entradas depende de la base en la cual estamos trabajando. Esta definición se puede extender a cualquier función de una o varias variables que sea lineal (o multilneal). Por el momento nos restringiremos a operadores lineales.</p>
+<p>En la definición 6 establecimos que las matrices columna corresponden a vectores, y sus entradas depende de la base en la cual estamos trabajando. Esta definición se puede extender a cualquier función de una o varias variables que sea lineal o multilineal. Por el momento nos restringiremos a operadores lineales.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong><em>Definción 7</em></strong>: Sean <span class="math inline">\(B = \{v_{i}\}_{i \in I}\)</span> y <span class="math inline">\(B' = \{v'_{i}\}_{i \in I}\)</span> bases ortonormales de <span class="math inline">\(\mathbb{H}\)</span>. Y sea <span class="math inline">\(\hat{T}\)</span> un operador lineal en <span class="math inline">\(\mathbb{H}\)</span>. Definimos la matriz <span class="math inline">\(|\hat{T}|_{BB'}\)</span> como la matriz de entradas <span class="math inline">\(t_{ij}\)</span> donde</p>
+<p><strong><em>Definción 7</em></strong>: Sea <span class="math inline">\(B = \{v_{i}\}_{i \in I}\)</span> una base ortonormal de <span class="math inline">\(\mathbb{H}\)</span>. Y sea <span class="math inline">\(\hat{T}\)</span> un operador lineal en <span class="math inline">\(\mathbb{H}\)</span>. Definimos la matriz <span class="math inline">\(|\hat{T}|_{BB'}\)</span> como la matriz de entradas <span class="math inline">\(t_{ij}\)</span> que cumplen la relación. <span class="math inline">\(\hat{T}v_{i} = \sum_{j \in I} t_{ij} v_{i}\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <h5 class="subtitle is-5">
 + Teorema de descomposición espectral y factorización QR
@@ -202,6 +202,12 @@ Michael A. Nielsen and Isaac L. Chuang. <em>Quantum Computation and Quantum Info
 Sheldon Axler. <em>Linear Algebra Done Right</em>. Springer, New York, 2015.
 </li>
 </ol>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Es un producto tensorial, sin embargo diferenciaremos ambos, tanto en su interpretación física como en notación. Aún así es bueno tener en mente que ambos matemáticamente son lo mismo, gracias al isomorfismo entre <span class="math inline">\(\mathfrak{T}_{n}^{m}(\mathbb{V}) = \bigotimes_{i = 1}^{n} \mathbb{V}^{*} \otimes \bigotimes_{i = 1}^{m} \mathbb{V}\)</span>. Donde <span class="math inline">\(\mathfrak{T}_{n}^{m}(\mathbb{V})\)</span> es el conjunto de tensores del tipo <span class="math inline">\((n, m)\)</span>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
     </section>
 </article>
 
