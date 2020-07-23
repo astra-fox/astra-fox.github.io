@@ -48,7 +48,7 @@
                     
 <div class="index-post">
     <article>
-    <h1 class="title is-4">Notas en álgebra lineal (Borrador)</h1>
+    <h1 class="title is-4">Conceptos básicos de álgebra lineal (Borrador)</h1>
     <section class="author">
         Posted on September 11, 2019
         
@@ -78,14 +78,20 @@
 <p>- <strong><em>Definición 2</em></strong>: Sea <span class="math inline">\(\mathbb{H}\)</span> un espacio vectorial con un producto interno <span class="math inline">\(\langle-,-\rangle\)</span>. Entonces definimos la norma de <span class="math inline">\(\mathbb{H}\)</span> como la función <span class="math inline">\(|| - ||: \mathbb{H} \to \mathbb{R}^{\geq 0}\)</span> definida como <span class="math inline">\(||x|| = \sqrt{\langle x,x\rangle}\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p>No es difícil probar, a partir de las definiciones 1 y 2, que efectivamente esta función es una norma en el sentido mas general. A partir de esta definición podemos definir una métrica y de ahí fijar una topología métrica para ese espacio vectorial. Cuando este espacio es completo (esto es que toda sucesión de Cauchy es convergente) respecto a esa topología decimos que <span class="math inline">\(\mathbb{H}\)</span> es un espacio de Hilbert.</p>
-<p><strong>(probar que efectivamente es un R^n y C^n son espacios de Hilbert)</strong></p>
 <p><span class="math inline">\(~\)</span></p>
-<p>En mecánica cuántica nuestro espacio de estado es una espacio de Hilbert. En el caso de la computación cuántica la mayoría de nuestros espacios de Hilbert son de dimensión finita, lo cual facilita algunas cosas. Por ejemplo no tenemos que tener en cuenta la diferencia entre dual algebráico y dual topológico, pues al ser <span class="math inline">\(\mathbb{H}\)</span> un espacio de dimensión finita toda transformación lineal es continua y por tanto el dual algebraico y el dual topológico son el mismo.</p>
+<p>Usualmente en los libros de física no se habla de la convergencia de sucesiones de Cauchy si no de la resolución de identidad. Sin embargo es la completitud del espacio es lo que permite hablar de esta. Supongo que la razón para ello es que la resolución de identidad es una “definición” operativa, mientras que la convergencia de las sucesiones de Cauchy es un elemento técnico que no aporta mucho a la hora de realizar cálculos y por tanto no es tan importante a la hora de aprender mecánica cuántica y por extensión computación cuántica.</p>
+<p><span class="math inline">\(~\)</span></p>
+<p>En mecánica cuántica nuestro espacio de configuración, llamado espacio de estado, es un espacio de Hilbert. En el caso de la computación cuántica la mayoría de nuestros espacios de Hilbert son de dimensión finita, lo cual facilita algunas cosas. Por ejemplo no tenemos que tener en cuenta la diferencia entre dual algebráico y dual topológico, pues al ser <span class="math inline">\(\mathbb{H}\)</span> un espacio de dimensión finita toda transformación lineal es continua y por tanto el dual algebraico y el dual topológico son el mismo.</p>
 <p><span class="math inline">\(~\)</span></p>
 <p>- <strong><em>Definición 3</em></strong>: Sea <span class="math inline">\(\mathbb{H}\)</span> un espacio de Hilbert. Definimos su dual algebraico como el conjunto de todas las transformaciones lineales que van de <span class="math inline">\(\mathbb{H}\)</span> a <span class="math inline">\(\mathbb{C}\)</span>, y lo denotamos como <span class="math inline">\(\mathbb{H}^{*}\)</span>.</p>
 <p><span class="math inline">\(~\)</span></p>
 <p>- <strong><em>Teorema 1</em></strong> “De representación de Riesz”: Sea <span class="math inline">\(\mathbb{H}\)</span> un espacio de Hilbert. Y sea <span class="math inline">\(f \in \mathbb{H}^{*}\)</span>, entonces existe un elemento <span class="math inline">\(v \in \mathbb{H}\)</span> tal que para todo <span class="math inline">\(w \in \mathbb{H}\)</span>, <span class="math inline">\(f(w) = \langle v, w \rangle\)</span>, mas aún <span class="math inline">\(||f||_{H^{*}} = ||v||_{H}\)</span></p>
-<p><strong>(probar para espacios de dimensión finita teniendo en cuenta que toda transformación lineal entre espacios de dimensión finita es continua)</strong></p>
+<details>
+<summary>Demostración</summary>
+<div class="proof">
+Demasiado técnica para este nivel. Sin embargo una buena referencia es (AGREGAR LA REFERENCIA).
+</div>
+</details>
 <p><span class="math inline">\(~\)</span></p>
 <p>De lo anterior podemos ver que en espacios de Hilbert cada vector dual esta asociado a un vector en <span class="math inline">\(\mathbb{H}\)</span> y por tanto esta transformación lineal se puede representar a través del producto interno, en notación: <span class="math inline">\(f_{v}(-) = \langle v, - \rangle\)</span>. Ha esté tipo de función también se le llama un funcional lineal.</p>
 <p><span class="math inline">\(~\)</span></p>
@@ -93,8 +99,13 @@
 <p><span class="math inline">\(~\)</span></p>
 <p>- <strong><em>Definición 4</em></strong>: Sea <span class="math inline">\(B = \{ v_{i} \}_{i \in I}\)</span> un conjunto de vectores de <span class="math inline">\(\mathbb{H}\)</span>. Llamamos al espacio generado por <span class="math inline">\(B\)</span>, denotado por <span class="math inline">\(\langle B \rangle_{G}\)</span>, como el conjunto posible de todas las posibles combinaciones lineales de los vectores de <span class="math inline">\(B\)</span>. Si <span class="math inline">\(\langle B \rangle_{G} = \mathbb{H}\)</span> decimos que <span class="math inline">\(B\)</span> genera a <span class="math inline">\(\mathbb{H}\)</span>. Y ademas si <span class="math inline">\(B\)</span> es linealmente independiente, entonces <span class="math inline">\(B\)</span> es una base de <span class="math inline">\(\mathbb{H}\)</span>.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p>Es fácil ver que <span class="math inline">\(\langle B \rangle_{G}\)</span> es un subespacio vectorial de <span class="math inline">\(\mathbb{H}\)</span>.</p>
-<p><strong>(probar la premisa anterior)</strong></p>
+<p><strong><em>Proposición 2</em></strong>: <span class="math inline">\(\langle B \rangle_{G}\)</span> es un subespacio vectorial de <span class="math inline">\(\mathbb{H}\)</span>.</p>
+<details>
+<summary>Demostración</summary>
+<div class="proof">
+ESCRIBIR LA DEMOSTRACIÓN.
+</div>
+</details>
 <p><span class="math inline">\(~\)</span></p>
 <p>- <strong><em>Definición 5</em></strong>: Sean <span class="math inline">\(v, w \in \mathbb{H}\)</span>. Si <span class="math inline">\(\langle v, w \rangle = 0\)</span>, decimos que <span class="math inline">\(v\)</span> y <span class="math inline">\(w\)</span> “son ortogonales respecto al producto interno <span class="math inline">\(\langle -, - \rangle\)</span>.” Si el producto interno al cual se refiere es claro, entonces decimos simplemente “son ortogonales.” Sea <span class="math inline">\(B\)</span> el conjunto de la definición 3, si los vectores de <span class="math inline">\(B\)</span> son ortogonales entre si y ademas <span class="math inline">\(B\)</span> es una base, entonces decimos que <span class="math inline">\(B\)</span> es una base ortogonal. Y si la normal de los vectores es 1, decimos que <span class="math inline">\(B\)</span> es una base ortonormal.</p>
 <p><span class="math inline">\(~\)</span></p>
@@ -181,7 +192,21 @@
 <p><span class="math inline">\(~\)</span></p>
 <p>En la definición 6 establecimos que las matrices columna corresponden a vectores, y sus entradas depende de la base en la cual estamos trabajando. Esta definición se puede extender a cualquier función de una o varias variables que sea lineal o multilineal. Por el momento nos restringiremos a operadores lineales.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong><em>Definción 7</em></strong>: Sea <span class="math inline">\(B = \{v_{i}\}_{i \in I}\)</span> una base ortonormal de <span class="math inline">\(\mathbb{H}\)</span>. Y sea <span class="math inline">\(\hat{T}\)</span> un operador lineal en <span class="math inline">\(\mathbb{H}\)</span>. Definimos la matriz <span class="math inline">\(|\hat{T}|_{B}\)</span> como la matriz de entradas <span class="math inline">\(t_{ij}\)</span> que cumplen la relación. <span class="math inline">\(\hat{T}v_{i} = \sum_{j \in I} t_{ij} v_{j}\)</span></p>
+<p><strong><em>Definción 7</em></strong>: Sean <span class="math inline">\(B = \{v_{i}\}_{i \in I}\)</span> y <span class="math inline">\(B' = \{w_{i}\}_{i \in I}\)</span> bases ortonormales de <span class="math inline">\(\mathbb{H}\)</span>. Y sea <span class="math inline">\(\hat{T}\)</span> un operador lineal en <span class="math inline">\(\mathbb{H}\)</span>. Definimos la matriz <span class="math inline">\(|\hat{T}|_{BB'}\)</span> como la matriz de entradas <span class="math inline">\(t_{ij}\)</span> que cumplen la relación <span class="math inline">\(\hat{T}v_{j} = \sum_{i \in I} t_{ij} w_{i}\)</span>. Ha esta matriz la llamamos la matriz de representación de <span class="math inline">\(\hat{T}\)</span> en términos de las bases <span class="math inline">\(B\)</span> y <span class="math inline">\(B'\)</span>. Cuando las bases <span class="math inline">\(B\)</span> y <span class="math inline">\(B'\)</span> son las mismas escribimos <span class="math inline">\(|\hat{T}|_{B}\)</span> en ves de <span class="math inline">\(|\hat{T}|_{BB'}\)</span>.</p>
+<p><span class="math inline">\(~\)</span></p>
+<p>Por tanto la representación de la aplicación del operador <span class="math inline">\(\hat{T}\)</span> sobre un vector <span class="math inline">\(v\)</span>, o sea <span class="math inline">\(\hat{T}v = w\)</span>, queda representada como <span class="math inline">\(|\hat{T}|_{BB'}|v|_{B} = |w|_{B'}\)</span>.</p>
+<p><span class="math inline">\(~\)</span></p>
+<p><strong><em>Proposición 3</em></strong>: Sean <span class="math inline">\(\hat{T}\)</span> y <span class="math inline">\(\hat{H}\)</span> dos operadores lineales de <span class="math inline">\(\mathbb{H}\)</span>. Y sean <span class="math inline">\(B\)</span>, <span class="math inline">\(B'\)</span> y <span class="math inline">\(B''\)</span> bases ortonormales de <span class="math inline">\(\mathbb{H}\)</span>, entonces <span class="math inline">\(|\hat{T} \circ \hat{H}|_{BB'} = |\hat{T}|_{B''B'}|\hat{H}|_{BB''}\)</span>.</p>
+<details>
+<summary>Demostración</summary>
+<div class="proof">
+ESCRIBIR LA DEMOSTRACIÓN.
+</div>
+</details>
+<p><span class="math inline">\(~\)</span></p>
+<p>Esto significa que la composición de operadores lineal en términos de su representación es una multiplicación de matrices.</p>
+<p><span class="math inline">\(~\)</span></p>
+<p>¿Cual es la conexión entre esto y la notación de Dirac que introdujimos antes?</p>
 <p><span class="math inline">\(~\)</span></p>
 <h5 class="subtitle is-5">
 + Teorema de descomposición espectral y factorización QR
@@ -207,7 +232,7 @@ Sheldon Axler. <em>Linear Algebra Done Right</em>. Springer, New York, 2015.
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Es un producto tensorial, sin embargo diferenciaremos ambos, tanto en su interpretación física como en notación. Aún así es bueno tener en mente que ambos matemáticamente son lo mismo, gracias al isomorfismo entre <span class="math inline">\(\mathfrak{T}_{n}^{m}(\mathbb{V}) = \bigotimes_{i = 1}^{n} \mathbb{V}^{*} \otimes \bigotimes_{i = 1}^{m} \mathbb{V}\)</span>. Donde <span class="math inline">\(\mathfrak{T}_{n}^{m}(\mathbb{V})\)</span> es el conjunto de tensores del tipo <span class="math inline">\((n, m)\)</span>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Esta operación es realmente un producto tensorial, sin embargo diferenciamos ambos. Aún así es bueno tener en mente que ambos son matemáticamente equivalentes, gracias al isomorfismo entre <span class="math inline">\(\mathfrak{T}_{n}^{m}(\mathbb{V})\)</span> y <span class="math inline">\(\bigotimes_{i = 1}^{n} \mathbb{V}^{*} \otimes \bigotimes_{i = 1}^{m} \mathbb{V}\)</span>. Donde <span class="math inline">\(\mathfrak{T}_{n}^{m}(\mathbb{V})\)</span> es el conjunto de tensores de tipo <span class="math inline">\((n, m)\)</span>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
     </section>

@@ -16,3 +16,11 @@
 ol{
  list-style-position:inside;
 }
+
+
+details div.proof{
+ background-color:aliceblue;
+ border-style:solid;
+ border-width:thin;
+ padding:1rem;
+}
