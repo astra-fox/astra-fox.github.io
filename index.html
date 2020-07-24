@@ -60,7 +60,7 @@
         
     </section>
     <section>
-        <p>Para poder empezar a estudiar las bases de la computación cuántica es necesario conocer algo de álgebra linea. Se debé aclarar que la mayoría de estos resultados solo aplicán en espacios de dimensión finita.</p>
+        <p>Para poder empezar a estudiar las bases de la computación cuántica es necesario conocer algo de álgebra linea. Se debé aclarar que estas notas las escribo para repasar estos conceptos, por lo que es posible que no sean fáciles de entender o seguir sin algo de familiaridad con el tema. Para un buen aprendizaje de los conceptos básicos de álgebra lineal se puede consultar [<a href="#SheldonAxler">2</a>].</p>
 <p><span class="math inline">\(~\)</span></p>
 <h5 class="subtitle is-5">
 + Definiciones básicas y notación de Dirac
@@ -79,17 +79,34 @@
 <p><span class="math inline">\(~\)</span></p>
 <p>No es difícil probar, a partir de las definiciones 1 y 2, que efectivamente esta función es una norma en el sentido mas general. A partir de esta definición podemos definir una métrica y de ahí fijar una topología métrica para ese espacio vectorial. Cuando este espacio es completo (esto es que toda sucesión de Cauchy es convergente) respecto a esa topología decimos que <span class="math inline">\(\mathbb{H}\)</span> es un espacio de Hilbert.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p>Usualmente en los libros de física no se habla de la convergencia de sucesiones de Cauchy si no de la resolución de identidad. Sin embargo es la completitud del espacio es lo que permite hablar de esta. Supongo que la razón para ello es que la resolución de identidad es una “definición” operativa, mientras que la convergencia de las sucesiones de Cauchy es un elemento técnico que no aporta mucho a la hora de realizar cálculos y por tanto no es tan importante a la hora de aprender mecánica cuántica y por extensión computación cuántica.</p>
+<p>Usualmente en los libros de física no se habla de la convergencia de sucesiones de Cauchy si no de la resolución de identidad. Supongo que la razón para ello es que la resolución de identidad es una “definición” operativa, mientras que la convergencia de las sucesiones de Cauchy es un elemento técnico que no aporta mucho a la hora de realizar cálculos y por tanto no es tan importante a la hora de aprender mecánica cuántica desde una perspectiva física.</p>
 <p><span class="math inline">\(~\)</span></p>
 <p>En mecánica cuántica nuestro espacio de configuración, llamado espacio de estado, es un espacio de Hilbert. En el caso de la computación cuántica la mayoría de nuestros espacios de Hilbert son de dimensión finita, lo cual facilita algunas cosas. Por ejemplo no tenemos que tener en cuenta la diferencia entre dual algebráico y dual topológico, pues al ser <span class="math inline">\(\mathbb{H}\)</span> un espacio de dimensión finita toda transformación lineal es continua y por tanto el dual algebraico y el dual topológico son el mismo.</p>
 <p><span class="math inline">\(~\)</span></p>
 <p>- <strong><em>Definición 3</em></strong>: Sea <span class="math inline">\(\mathbb{H}\)</span> un espacio de Hilbert. Definimos su dual algebraico como el conjunto de todas las transformaciones lineales que van de <span class="math inline">\(\mathbb{H}\)</span> a <span class="math inline">\(\mathbb{C}\)</span>, y lo denotamos como <span class="math inline">\(\mathbb{H}^{*}\)</span>.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p>- <strong><em>Teorema 1</em></strong> “De representación de Riesz”: Sea <span class="math inline">\(\mathbb{H}\)</span> un espacio de Hilbert. Y sea <span class="math inline">\(f \in \mathbb{H}^{*}\)</span>, entonces existe un elemento <span class="math inline">\(v \in \mathbb{H}\)</span> tal que para todo <span class="math inline">\(w \in \mathbb{H}\)</span>, <span class="math inline">\(f(w) = \langle v, w \rangle\)</span>, mas aún <span class="math inline">\(||f||_{H^{*}} = ||v||_{H}\)</span></p>
+<p>- <strong><em>Teorema 1</em></strong> “De representación de Riesz”: Sea <span class="math inline">\(\mathbb{H}\)</span> un espacio de Hilbert. Y sea <span class="math inline">\(f \in \mathbb{H}^{*}\)</span>, entonces existe un único elemento <span class="math inline">\(v \in \mathbb{H}\)</span> tal que para todo <span class="math inline">\(w \in \mathbb{H}\)</span>, <span class="math inline">\(f(w) = \langle v, w \rangle\)</span>, mas aún <span class="math inline">\(||f||_{\mathbb{H}^{*}} = ||v||_{\mathbb{H}}\)</span>.</p>
 <details>
 <summary>Demostración</summary>
-<div class="proof">
-Demasiado técnica para este nivel. Sin embargo una buena referencia es (AGREGAR LA REFERENCIA).
+<div class="proof" style="position:relative;">
+<p>
+Para el caso general se requieren herramientas propias del análisis funcional, una buena referencia para ver la prueba es [<a href="#EberhardZeidler">3</a>]. Sin embargo el caso de dimensión finita es mas sencillo.
+</p>
+<p></br></p>
+<p>
+<p>Sea <span class="math inline">\(B = \{v_{i}\}_{i \in I}\)</span> una base ortonormal de <span class="math inline">\(\mathbb{H}\)</span>. Por tanto para todo <span class="math inline">\(w \in \mathbb{H}\)</span> se tiene que, <span class="math inline">\(w = \sum_{i \in I} \alpha_{i}v_{i}\)</span> donde <span class="math inline">\(\alpha_{i} = \langle v_{i}, w\rangle\)</span>. Al aplicar <span class="math inline">\(f\)</span> sobre <span class="math inline">\(w\)</span> se obtiene:</p>
+<p><span class="math display">\[f(w) = \sum_{i \in I} \alpha_{i}f(v_{i}) = \sum_{i \in I} \langle v_{i}, v\rangle f(v_{i}) \tag{D.1}\]</span></p>
+<p>Como <span class="math inline">\(f \in \mathbb{H}^{*}\)</span>, entonces por la definición y propiedades de producto interno se sigue que:</p>
+<p><span class="math display">\[f(w) = \sum_{i \in I} \langle \overline{f(v_{i})} v_{i}, v\rangle = \langle \sum_{i \in I} \overline{f(v_{i})} v_{i}, v\rangle \tag{D.2}\]</span></p>
+<p>Claramente <span class="math inline">\(\sum_{i \in I} \overline{f(v_{i})} v_{i} \in \mathbb{H}\)</span> por tanto sea <span class="math inline">\(v = \sum_{i \in I} \overline{f(v_{i})} v_{i}\)</span>. Se puede apreciar que este vector no depende de <span class="math inline">\(w\)</span> si no de <span class="math inline">\(B\)</span> y <span class="math inline">\(f\)</span>. Luego:</p>
+<p><span class="math display">\[f(w) = \langle v, w \rangle \tag{D.3}\]</span></p>
+<p>La unicidad del vector <span class="math inline">\(v\)</span> se sigué de la no-generación de <span class="math inline">\(\langle -,-\rangle\)</span>.</p>
+<p><span class="math inline">\(~\)</span></p>
+Con esto demostramos un isomorfismo entre <span class="math inline">\(\mathbb{H}^{*}\)</span> y <span class="math inline">\(\mathbb{H}\)</span>. Para la isometría basta equipar a <span class="math inline">\(\mathbb{H}^{*}\)</span> con el siguiente producto interno: Si <span class="math inline">\(f_{v}\)</span> es el vector dual asociado a <span class="math inline">\(v \in \mathbb{H}\)</span>, entonces basta definir el producto interno de <span class="math inline">\(\mathbb{H}^{*}\)</span> como <span class="math inline">\(\langle f_{v}, f_{w} \rangle = \langle v, w \rangle\)</span>.
+</p>
+<div class="qed">
+<span class="math inline">\(\square\)</span>
+</div>
 </div>
 </details>
 <p><span class="math inline">\(~\)</span></p>
@@ -99,11 +116,14 @@ Demasiado técnica para este nivel. Sin embargo una buena referencia es (AGREGAR
 <p><span class="math inline">\(~\)</span></p>
 <p>- <strong><em>Definición 4</em></strong>: Sea <span class="math inline">\(B = \{ v_{i} \}_{i \in I}\)</span> un conjunto de vectores de <span class="math inline">\(\mathbb{H}\)</span>. Llamamos al espacio generado por <span class="math inline">\(B\)</span>, denotado por <span class="math inline">\(\langle B \rangle_{G}\)</span>, como el conjunto posible de todas las posibles combinaciones lineales de los vectores de <span class="math inline">\(B\)</span>. Si <span class="math inline">\(\langle B \rangle_{G} = \mathbb{H}\)</span> decimos que <span class="math inline">\(B\)</span> genera a <span class="math inline">\(\mathbb{H}\)</span>. Y ademas si <span class="math inline">\(B\)</span> es linealmente independiente, entonces <span class="math inline">\(B\)</span> es una base de <span class="math inline">\(\mathbb{H}\)</span>.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong><em>Proposición 2</em></strong>: <span class="math inline">\(\langle B \rangle_{G}\)</span> es un subespacio vectorial de <span class="math inline">\(\mathbb{H}\)</span>.</p>
+<p>- <strong><em>Proposición 2</em></strong>: <span class="math inline">\(\langle B \rangle_{G}\)</span> es un subespacio vectorial de <span class="math inline">\(\mathbb{H}\)</span>.</p>
 <details>
 <summary>Demostración</summary>
 <div class="proof">
 ESCRIBIR LA DEMOSTRACIÓN.
+<div class="qed">
+<span class="math inline">\(\square\)</span>
+</div>
 </div>
 </details>
 <p><span class="math inline">\(~\)</span></p>
@@ -120,7 +140,21 @@ ESCRIBIR LA DEMOSTRACIÓN.
 \]</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <p>Una pregunta natural al ver esta definición es: ¿Cual es la representación de los vectores de <span class="math inline">\(\mathbb{H}^{*}\)</span>?.</p>
-<p>Por la misma definición, necesitamos una base para representarla. Si tenemos que <span class="math inline">\(B = \{e_{i}\}_{i \in I}\)</span> es una base ortonormal de <span class="math inline">\(\mathbb{H}\)</span>, podemos construir una base ortonormal para <span class="math inline">\(\mathbb{H}^{*}\)</span> de la siguiente forma: Sea <span class="math inline">\(B^{*} = \{e^{i}\}_{i \in I}\)</span> un subconjunto de <span class="math inline">\(\mathbb{H}^{*}\)</span>, tales que <span class="math inline">\(e^{i}(e_{j}) = \delta_{ij}\)</span>. Se puede ver que <span class="math inline">\(B^{*}\)</span> es efectivamente una base ortonormal de <span class="math inline">\(\mathbb{H}^{*}\)</span> <strong>(¡¡¡probar!!!)</strong>. A <span class="math inline">\(B^{*}\)</span> se le dice la base dual de <span class="math inline">\(B\)</span>. Por tanto si: <span class="math display">\[
+<p>Por la misma definición, necesitamos una base para representarla. Si tenemos que <span class="math inline">\(B = \{e_{i}\}_{i \in I}\)</span> es una base ortonormal de <span class="math inline">\(\mathbb{H}\)</span>, podemos construir una base ortonormal para <span class="math inline">\(\mathbb{H}^{*}\)</span> de la siguiente forma: Sea <span class="math inline">\(B^{*} = \{e^{i}\}_{i \in I}\)</span> un subconjunto de <span class="math inline">\(\mathbb{H}^{*}\)</span>, tales que <span class="math inline">\(e^{i}(e_{j}) = \delta_{ij}\)</span>. Se puede ver que <span class="math inline">\(B^{*}\)</span> es efectivamente una base ortonormal de <span class="math inline">\(\mathbb{H}^{*}\)</span>. A <span class="math inline">\(B^{*}\)</span> se le dice la base dual de <span class="math inline">\(B\)</span>.</p>
+<p><span class="math inline">\(~\)</span></p>
+- <strong><em>Proposición 3</em></strong>: <span class="math inline">\(B^{*}\)</span> es una base ortonormal de <span class="math inline">\(\mathbb{H}^{*}\)</span>.
+<details>
+<summary>Demostración</summary>
+<div class="proof">
+ESCRIBIR LA DEMOSTRACIÓN.
+<div class="qed">
+<span class="math inline">\(\square\)</span>
+</div>
+</div>
+</details>
+<p><span class="math inline">\(~\)</span></p>
+<p>La representación de <span class="math inline">\(f\)</span> depende del producto interno, pues este define la isometría entre <span class="math inline">\(\mathbb{H}^{*}\)</span> y <span class="math inline">\(\mathbb{H}\)</span>, como se puede ver en la demostración del teorema de representación. Asumiendo que usamos la base dual de alguna base ortonormal <span class="math inline">\(B\)</span> y que nuestro espacio de Hilbert es <span class="math inline">\(\mathbb{C}^{n}\)</span> con su producto interno usual, llamado producto punto. Por tanto:</p>
+<p><span class="math display">\[
 |v|_{B} = \begin{bmatrix}
             \alpha_{1} \\\
             \alpha_{2} \\\
@@ -192,47 +226,48 @@ ESCRIBIR LA DEMOSTRACIÓN.
 <p><span class="math inline">\(~\)</span></p>
 <p>En la definición 6 establecimos que las matrices columna corresponden a vectores, y sus entradas depende de la base en la cual estamos trabajando. Esta definición se puede extender a cualquier función de una o varias variables que sea lineal o multilineal. Por el momento nos restringiremos a operadores lineales.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong><em>Definción 7</em></strong>: Sean <span class="math inline">\(B = \{v_{i}\}_{i \in I}\)</span> y <span class="math inline">\(B' = \{w_{i}\}_{i \in I}\)</span> bases ortonormales de <span class="math inline">\(\mathbb{H}\)</span>. Y sea <span class="math inline">\(\hat{T}\)</span> un operador lineal en <span class="math inline">\(\mathbb{H}\)</span>. Definimos la matriz <span class="math inline">\(|\hat{T}|_{BB'}\)</span> como la matriz de entradas <span class="math inline">\(t_{ij}\)</span> que cumplen la relación <span class="math inline">\(\hat{T}v_{j} = \sum_{i \in I} t_{ij} w_{i}\)</span>. Ha esta matriz la llamamos la matriz de representación de <span class="math inline">\(\hat{T}\)</span> en términos de las bases <span class="math inline">\(B\)</span> y <span class="math inline">\(B'\)</span>. Cuando las bases <span class="math inline">\(B\)</span> y <span class="math inline">\(B'\)</span> son las mismas escribimos <span class="math inline">\(|\hat{T}|_{B}\)</span> en ves de <span class="math inline">\(|\hat{T}|_{BB'}\)</span>.</p>
+<p>- <strong><em>Definción 7</em></strong>: Sean <span class="math inline">\(B = \{v_{i}\}_{i \in I}\)</span> y <span class="math inline">\(B' = \{w_{i}\}_{i \in I}\)</span> bases ortonormales de <span class="math inline">\(\mathbb{H}\)</span>. Y sea <span class="math inline">\(\hat{T}\)</span> un operador lineal en <span class="math inline">\(\mathbb{H}\)</span>. Definimos la matriz <span class="math inline">\(|\hat{T}|_{BB'}\)</span> como la matriz de entradas <span class="math inline">\(t_{ij}\)</span> que cumplen la relación <span class="math inline">\(\hat{T}v_{j} = \sum_{i \in I} t_{ij} w_{i}\)</span>. Ha esta matriz la llamamos la matriz de representación de <span class="math inline">\(\hat{T}\)</span> en términos de las bases <span class="math inline">\(B\)</span> y <span class="math inline">\(B'\)</span>. Cuando las bases <span class="math inline">\(B\)</span> y <span class="math inline">\(B'\)</span> son las mismas escribimos <span class="math inline">\(|\hat{T}|_{B}\)</span> en ves de <span class="math inline">\(|\hat{T}|_{BB'}\)</span>.</p>
 <p><span class="math inline">\(~\)</span></p>
 <p>Por tanto la representación de la aplicación del operador <span class="math inline">\(\hat{T}\)</span> sobre un vector <span class="math inline">\(v\)</span>, o sea <span class="math inline">\(\hat{T}v = w\)</span>, queda representada como <span class="math inline">\(|\hat{T}|_{BB'}|v|_{B} = |w|_{B'}\)</span>.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p><strong><em>Proposición 3</em></strong>: Sean <span class="math inline">\(\hat{T}\)</span> y <span class="math inline">\(\hat{H}\)</span> dos operadores lineales de <span class="math inline">\(\mathbb{H}\)</span>. Y sean <span class="math inline">\(B\)</span>, <span class="math inline">\(B'\)</span> y <span class="math inline">\(B''\)</span> bases ortonormales de <span class="math inline">\(\mathbb{H}\)</span>, entonces <span class="math inline">\(|\hat{T} \circ \hat{H}|_{BB'} = |\hat{T}|_{B''B'}|\hat{H}|_{BB''}\)</span>.</p>
+<p>- <strong><em>Proposición 4</em></strong>: Sean <span class="math inline">\(\hat{T}\)</span> y <span class="math inline">\(\hat{H}\)</span> dos operadores lineales de <span class="math inline">\(\mathbb{H}\)</span>. Y sean <span class="math inline">\(B\)</span>, <span class="math inline">\(B'\)</span> y <span class="math inline">\(B''\)</span> bases ortonormales de <span class="math inline">\(\mathbb{H}\)</span>, entonces <span class="math inline">\(|\hat{T} \circ \hat{H}|_{BB'} = |\hat{T}|_{B''B'}|\hat{H}|_{BB''}\)</span>.</p>
 <details>
 <summary>Demostración</summary>
 <div class="proof">
 ESCRIBIR LA DEMOSTRACIÓN.
+<div class="qed">
+<span class="math inline">\(\square\)</span>
+</div>
 </div>
 </details>
 <p><span class="math inline">\(~\)</span></p>
 <p>Esto significa que la composición de operadores lineal en términos de su representación es una multiplicación de matrices.</p>
 <p><span class="math inline">\(~\)</span></p>
-<p>¿Cual es la conexión entre esto y la notación de Dirac que introdujimos antes?</p>
-<p><span class="math inline">\(~\)</span></p>
 <h5 class="subtitle is-5">
 + Teorema de descomposición espectral y factorización QR
 </h5>
-<p><span class="math inline">\(~\)</span></p>
-<p><span class="math inline">\(~\)</span></p>
-<h5 class="subtitle is-5">
-+ Producto tensorial
-</h5>
-<p><span class="math inline">\(~\)</span></p>
 <p><span class="math inline">\(~\)</span></p>
 <h5 class="subtitle is-5">
 + Bibliografía
 </h5>
 <ol>
+<a name="NielsenChuang"></a>
 <li>
 Michael A. Nielsen and Isaac L. Chuang. <em>Quantum Computation and Quantum Information</em>. Cambridge University Press, New York, 2010.
 </li>
+<a name="SheldonAxler"></a>
 <li>
 Sheldon Axler. <em>Linear Algebra Done Right</em>. Springer, New York, 2015.
+</li>
+<a name="EberhardZeidler"></a>
+<li>
+Eberhard Zeidler. <em>Applied Functional Analysis. Applications to Mathematical Physics</em>. Springer, New York, 1995.
 </li>
 </ol>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Esta operación es realmente un producto tensorial, sin embargo diferenciamos ambos. Aún así es bueno tener en mente que ambos son matemáticamente equivalentes, gracias al isomorfismo entre <span class="math inline">\(\mathfrak{T}_{n}^{m}(\mathbb{V})\)</span> y <span class="math inline">\(\bigotimes_{i = 1}^{n} \mathbb{V}^{*} \otimes \bigotimes_{i = 1}^{m} \mathbb{V}\)</span>. Donde <span class="math inline">\(\mathfrak{T}_{n}^{m}(\mathbb{V})\)</span> es el conjunto de tensores de tipo <span class="math inline">\((n, m)\)</span>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Esta operación es realmente un producto tensorial, sin embargo diferenciamos ambos. Aún así es bueno tener en mente que ambos son matemáticamente equivalentes, gracias al isomorfismo entre <span class="math inline">\(\mathfrak{T}_{m}^{n}(\mathbb{V})\)</span> y <span class="math inline">\(\bigotimes_{i = 1}^{n} \mathbb{V}^{*} \otimes \bigotimes_{i = 1}^{m} \mathbb{V}\)</span>. Donde <span class="math inline">\(\mathfrak{T}_{m}^{n}(\mathbb{V})\)</span> es el conjunto de tensores de tipo <span class="math inline">\((n, m)\)</span>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
     </section>

@@ -18,9 +18,20 @@ ol{
 }
 
 
+details>summary{
+ cursor:pointer;
+}
+
 details div.proof{
  background-color:aliceblue;
+ position:relative;
  border-style:solid;
  border-width:thin;
  padding:1rem;
+}
+
+details div.proof div.qed{
+ position:absolute;
+ bottom:1rem;
+ right:1rem;
 }
