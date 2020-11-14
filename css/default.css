@@ -17,6 +17,10 @@ ol{
  list-style-position:inside;
 }
 
+.footer{
+ background:linear-gradient(to bottom,rgb(220,220,220),white);
+}
+
 
 details>summary{
  cursor:pointer;
