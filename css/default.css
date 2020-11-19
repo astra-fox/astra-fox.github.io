@@ -1,4 +1,4 @@
- .sourceCode pre{padding:0rem}pre code a{color:unset}pre code a:hover{color:unset}figure{display:inline-block;text-align:center;margin:5px}figure img{vertical-align:top}figure div{margin:auto}figure figcaption{font-style:oblique}
+ @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');.font-is-montserrat{font-family:'Montserrat',sans-serif}.font-is-majormono{font-family:'Major Mono Display',monospace}.sourceCode pre{padding:0rem}pre code a{color:unset}pre code a:hover{color:unset}figure{display:inline-block;text-align:center;margin:5px}figure img{vertical-align:top}figure div{margin:auto}figure figcaption{font-style:oblique}
 .author{
  font-style:italic;
  margin-bottom:2.5%;
@@ -12,13 +12,17 @@
  background-position:0% 51.6%;
 }
 
+.has-background-color{
+ background-color:darkcyan;
+}
+
 
 ol{
  list-style-position:inside;
 }
 
 .footer{
- background:linear-gradient(to bottom,rgb(220,220,220),white);
+ background:linear-gradient(to bottom,#dae4e5,white);
 }
 
 
