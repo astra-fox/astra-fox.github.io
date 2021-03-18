@@ -74,7 +74,7 @@
 <li><span class="math inline">\(\langle v, \alpha w + u \rangle = \alpha \langle v, w \rangle + \langle v, u \rangle\)</span></li>
 <li><span class="math inline">\(\langle v, v \rangle &gt; 0\)</span> para todo <span class="math inline">\(v \neq 0\)</span></li>
 </ol>
-<p>A la función <span class="math inline">\(\langle-, -\rangle\)</span> le decimos un “producto interno” y al espacio vectorial <span class="math inline">\(\mathbb{H}\)</span> equipado con este producto le diremos una “espacio vectorial con un producto interno”.</p>
+<p>A la función <span class="math inline">\(\langle-, -\rangle\)</span> le decimos un “producto interno” y al espacio vectorial <span class="math inline">\(\mathbb{H}\)</span> equipado con este producto le diremos un “espacio vectorial con un producto interno”.</p>
 <p><br></p>
 <p>Recordemos que la propiedad 3 esta bien definida, pues <span class="math inline">\(\langle v, v \rangle = \overline{\langle v, v \rangle}\)</span> lo cual implica que <span class="math inline">\(\langle v, v \rangle \in \mathbb{R}\)</span> y por tanto la relación de la expresión se toma con respecto a la relación de orden típica de los reales.</p>
 <p><br></p>
@@ -181,10 +181,10 @@ Para el caso general se requieren herramientas propias del análisis funcional, 
 <p></br></p>
 <p>
 <p>Sea <span class="math inline">\(B = \{v_{i}\}_{i \in I}\)</span> una base ortonormal de <span class="math inline">\(\mathbb{H}\)</span>. Por tanto para todo <span class="math inline">\(w \in \mathbb{H}\)</span> se tiene que, <span class="math inline">\(w = \sum_{i \in I} \alpha_{i}v_{i}\)</span> donde <span class="math inline">\(\alpha_{i} = \langle v_{i}, w\rangle\)</span>, como vimos en la proposición 2. Al aplicar <span class="math inline">\(f\)</span> sobre <span class="math inline">\(w\)</span> se obtiene:</p>
-<p><span class="math display">\[f(w) = \sum_{i \in I} \alpha_{i}f(v_{i}) = \sum_{i \in I} \langle v_{i}, v\rangle f(v_{i}) \tag{T3.1}\]</span></p>
+<p><span class="math display">\[f(w) = \sum_{i \in I} \alpha_{i}f(v_{i}) = \sum_{i \in I} \langle v_{i}, w\rangle f(v_{i}) \tag{T3.1}\]</span></p>
 <p>Como <span class="math inline">\(f \in \mathbb{H}^{*}\)</span>, entonces por la definición y propiedades de producto interno se sigue que:</p>
-<p><span class="math display">\[f(w) = \sum_{i \in I} \langle \overline{f(v_{i})} v_{i}, v\rangle = \langle \sum_{i \in I} \overline{f(v_{i})} v_{i}, v\rangle \tag{T3.2}\]</span></p>
-<p>Claramente <span class="math inline">\(\sum_{i \in I} \overline{f(v_{i})} v_{i} \in \mathbb{H}\)</span> por tanto sea <span class="math inline">\(v = \sum_{i \in I} \overline{f(v_{i})} v_{i}\)</span>. Se puede apreciar que este vector no depende de <span class="math inline">\(w\)</span> si no de <span class="math inline">\(B\)</span> y <span class="math inline">\(f\)</span>. Luego:</p>
+<p><span class="math display">\[f(w) = \sum_{i \in I} \langle \overline{f(v_{i})} v_{i}, w\rangle = \langle \sum_{i \in I} \overline{f(v_{i})} v_{i}, w\rangle \tag{T3.2}\]</span></p>
+<p>Claramente <span class="math inline">\(\sum_{i \in I} \overline{f(v_{i})} v_{i} \in \mathbb{H}\)</span> por tanto sea <span class="math inline">\(v = \sum_{i \in I} \overline{f(v_{i})} v_{i}\)</span>. Se puede apreciar que este vector no depende de <span class="math inline">\(w\)</span> si no de <span class="math inline">\(f\)</span>. Luego:</p>
 <p><span class="math display">\[f(w) = \langle v, w \rangle \tag{T3.3}\]</span></p>
 <p>La unicidad del vector <span class="math inline">\(v\)</span> se sigué de la no-generación de <span class="math inline">\(\langle -,-\rangle\)</span>.</p>
 <p><br></p>
@@ -357,10 +357,9 @@ Eberhard Zeidler. <em>Applied Functional Analysis. Applications to Mathematical 
 </div>
 
 
-<div style="margin-top: 2.5%; border-top: solid black">
-    <p style="font-style: italic">You can find more in the <a href="./archive.html">archives</a>.</p>
-</div>
-
+<!-- <div style="margin-top: 2.5%; border-top: solid black">
+    <p style="font-style: italic">You can find more in the <a href="/archive.html">archives</a>.</p>
+</div> -->
                 </main>
 
                 <div class="column is-hidden-mobile is-1-tablet is-2-desktop is-3-fullhd"></div>

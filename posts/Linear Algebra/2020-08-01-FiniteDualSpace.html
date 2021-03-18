@@ -44,9 +44,9 @@
         <div class="section">
             <div class="columns">
 
-                <div class="column is-1 is-hidden-touch"></div>
+                <div class="column is-hidden-mobile is-1-tablet is-2-desktop is-3-fullhd"></div>
 
-                <main class="column is-full-mobile is-10-tablet is-8-desktop">
+                <main class="column is-full-mobile is-10-tablet is-8-desktop is-6-fullhd">
                     <article>
     <h1 class="title is-4 font-is-montserrat">Dual Space (draft)</h1>
     <section class="author">
@@ -62,9 +62,27 @@
     <section>
         <p><strong><em>Definition 1</em></strong>: Let be <span class="math inline">\(\mathbb{V}\)</span> a <span class="math inline">\(\mathbb{K}\)</span>-vector space. And let be <span class="math inline">\(\phi: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{K}\)</span> a function. We say <span class="math inline">\(\phi\)</span> is a bilinear form, or a bilinear function, if <span class="math inline">\(\phi\)</span> is linear for each argument. This mean for all <span class="math inline">\(v, w, u \in \mathbb{V}\)</span> and for all <span class="math inline">\(\alpha, \beta \in \mathbb{K}\)</span>:<br> 1. <span class="math inline">\(\phi(\alpha v + \beta w, u) = \alpha \phi(v, u) + \beta \phi(w, u)\)</span><br> 2. <span class="math inline">\(\phi(v, \alpha w + \beta u) = \alpha \phi(v, w) + \beta \phi(v, u)\)</span><br></p>
 <p><br></p>
-<p><strong><em>Definition 2</em></strong>: Let be <span class="math inline">\(\mathbb{V}\)</span> a <span class="math inline">\(\mathbb{K}\)</span>-vector space. And let be <span class="math inline">\(\phi: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{K}\)</span> a bilinear form. We say <span class="math inline">\(\phi\)</span> is non-degenerate symmetric bilinear form if it have both of this properties: <br> 1. Symmetric property: For all <span class="math inline">\(v, w \in \mathbb{V}\)</span>, <span class="math inline">\(\phi(v, w) = \phi(w, v)\)</span>.<br> 2. Non-degenerate property: For some <span class="math inline">\(u \in \mathbb{V}\)</span> we have that for all <span class="math inline">\(v \in \mathbb{V}\)</span>, <span class="math inline">\(\phi(v, u) = 0\)</span>, implies <span class="math inline">\(u = 0\)</span>.<br></p>
+<p><strong><em>Definition 2</em></strong>: Let be <span class="math inline">\(\mathbb{V}\)</span> a <span class="math inline">\(\mathbb{K}\)</span>-vector space. And let be <span class="math inline">\(\phi: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{K}\)</span> a bilinear form. We say <span class="math inline">\(\phi\)</span> is non-degenerate symmetric bilinear form if it have both of the following properties: <br> 1. Symmetric property: For all <span class="math inline">\(v, w \in \mathbb{V}\)</span>, <span class="math inline">\(\phi(v, w) = \phi(w, v)\)</span>.<br> 2. Non-degenerate property: For some <span class="math inline">\(u \in \mathbb{V}\)</span> we have that for all <span class="math inline">\(v \in \mathbb{V}\)</span>, <span class="math inline">\(\phi(v, u) = 0\)</span>, implies <span class="math inline">\(u = 0\)</span>.<br></p>
 <p><br></p>
-<p>asd</p>
+<p>Some examples of non-degenerate symmetric bilinear forms are the Minkowski metric: <span class="math display">\[
+|\eta|_{B} =
+  \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0 \\
+    0 &amp; 1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; -1
+  \end{bmatrix}
+\]</span> And the dot product of <span class="math inline">\(\mathbb{R}^{n}\)</span> and <span class="math inline">\(\mathbb{C}^n\)</span>: <span class="math display">\[
+|\langle -, - \rangle|_{B} =
+  \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0 \\
+    0 &amp; 1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span> In both case the matrix representation is given from a orthonormal basis.</p>
+<p><br></p>
+<p>The difference between <span class="math inline">\(\langle -, - \rangle\)</span> and <span class="math inline">\(\eta\)</span> is the dot product is a inner product (i.e is positive-definite) but the Minkowski metric is not. It’s a small difference between both, but thanks to that the properties of both space are different. In the case of the Minkowski metric we need to distinguish between covariant and contravariant vectors but in the euclidean metric (the dot product) we don’t have the necesity of make the distintion, that’s why in a basic course of linear algebra (and physics) they don’t talk about dual space.</p>
 <p><br></p>
 <h5 class="subtitle is-5">
 + Bibliography
@@ -92,17 +110,7 @@ Eberhard Zeidler. <em>Applied Functional Analysis. Applications to Mathematical 
 
                 </main>
 
-                <div class="column is-2">
-                    <aside style="margin-bottom: 5%">
-                        Categories: <a href="../../categories/Linear%20Algebra.html">Linear Algebra (2)</a>
-                    </aside>
-
-                    <aside>
-                        Tags: <a href="../../tags/English.html">English (1)</a>, <a href="../../tags/Linear%20Algebra.html">Linear Algebra (2)</a>, <a href="../../tags/Quantum%20Computing.html">Quantum Computing (1)</a>, <a href="../../tags/Spanish.html">Spanish (1)</a>
-                    </aside>
-                </div>
-
-                <div class="column is-1 is-hidden-touch"></div>
+                <div class="column is-hidden-mobile is-1-tablet is-2-desktop is-3-fullhd"></div>
 
             </div>
         </div>
