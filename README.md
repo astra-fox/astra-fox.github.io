@@ -1,2 +1,4 @@
 # astra-fox.github.io
-Blog
+My personal Blog.
+
+The topics are Quantum computing and information, also Elixir, Haskell and Julia.
