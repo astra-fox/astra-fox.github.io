@@ -50,42 +50,44 @@
                     
 <div class="index-post">
     <article>
-    <h1 class="title is-4 font-is-montserrat">Momento Angular: Teoría General (draft)</h1>
+    <h1 class="title is-4 font-is-montserrat">Dual Space (draft)</h1>
     <section class="author">
-        Posted on September 16, 2021
+        Posted on August  1, 2020
         
             by Alicia Henao
         
         <br>
         
-            Tags: <a href="./tags/Quantum%20Mechanics.html">Quantum Mechanics</a>, <a href="./tags/Spanish.html">Spanish</a>
+            Tags: <a href="./tags/Linear%20Algebra.html">Linear Algebra</a>, <a href="./tags/English.html">English</a>
         
     </section>
     <section>
-        <p>Consultar [<a href="#SheldonAxler">2</a>][<a href="#SergeiTreil">3</a>].</p>
+        <p><strong><em>Definition 1</em></strong>: Let be <span class="math inline">\(\mathbb{V}\)</span> a <span class="math inline">\(\mathbb{K}\)</span>-vector space. And let be <span class="math inline">\(\phi: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{K}\)</span> a function. We say <span class="math inline">\(\phi\)</span> is a bilinear form, or a bilinear function, if <span class="math inline">\(\phi\)</span> is linear for each argument. This mean for all <span class="math inline">\(v, w, u \in \mathbb{V}\)</span> and for all <span class="math inline">\(\alpha, \beta \in \mathbb{K}\)</span>:<br> 1. <span class="math inline">\(\phi(\alpha v + \beta w, u) = \alpha \phi(v, u) + \beta \phi(w, u)\)</span><br> 2. <span class="math inline">\(\phi(v, \alpha w + \beta u) = \alpha \phi(v, w) + \beta \phi(v, u)\)</span><br></p>
 <p><br></p>
-<p>Construiremos la teoría del momento angular de manera axiomática.</p>
+<p><strong><em>Definition 2</em></strong>: Let be <span class="math inline">\(\mathbb{V}\)</span> a <span class="math inline">\(\mathbb{K}\)</span>-vector space. And let be <span class="math inline">\(\phi: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{K}\)</span> a bilinear form. We say <span class="math inline">\(\phi\)</span> is non-degenerate symmetric bilinear form if it have both of the following properties: <br> 1. Symmetric property: For all <span class="math inline">\(v, w \in \mathbb{V}\)</span>, <span class="math inline">\(\phi(v, w) = \phi(w, v)\)</span>.<br> 2. Non-degenerate property: For some <span class="math inline">\(u \in \mathbb{V}\)</span> we have that for all <span class="math inline">\(v \in \mathbb{V}\)</span>, <span class="math inline">\(\phi(v, u) = 0\)</span>, implies <span class="math inline">\(u = 0\)</span>.<br></p>
 <p><br></p>
-<p><strong><em>Definición 1</em></strong>: Sea <span class="math inline">\(\hat{\textbf{J}}\)</span> un operador vectorial en el espacio de estado, tal que sus componentes cumplen la siguiente relación:</p>
-<p><span class="math display">\[[\hat{J}_{i}, \hat{J}_{j}] = i \hbar \sum_{n = 1}^{3} \epsilon_{i j n} \hat{J}_{n}  \tag{D1}\]</span></p>
-<p>Entonces al operador <span class="math inline">\(\hat{\textbf{J}}\)</span> lo llamamos un operador de momento angular.</p>
+<p>Some examples of non-degenerate symmetric bilinear forms are the Minkowski metric: <span class="math display">\[
+|\eta|_{B} =
+  \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0 \\
+    0 &amp; 1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; -1
+  \end{bmatrix}
+\]</span> And the dot product of <span class="math inline">\(\mathbb{R}^{n}\)</span> and <span class="math inline">\(\mathbb{C}^n\)</span>: <span class="math display">\[
+|\langle -, - \rangle|_{B} =
+  \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0 \\
+    0 &amp; 1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; 1
+  \end{bmatrix}
+\]</span> In both case the matrix representation is given from a orthonormal basis.</p>
 <p><br></p>
-<p>Veremos que apartir de esta definición y otras construcciones como los operadores escalera, podemos construir las propiedades generales que tiene el momento angular, incluyendo el momento angular orbital y de spin.</p>
-<p><br></p>
-<p>Cómo los <span class="math inline">\(\hat{J}_{i}\)</span> estan asociados a cantidades física y sus respectivas medidas, tenemos por tanto que debén ser hermitos, y en consequencia tenemos que <span class="math inline">\(\hat{\textbf{J}}\)</span> es hermitico.</p>
-<p><br></p>
-<p><strong><em>Definición 2</em></strong>: Sea <span class="math inline">\(\hat{\textbf{J}}\)</span> un operador de momento angular, definimos los operadores escalera para las componentes <span class="math inline">\(\hat{J}_{i}\)</span> y <span class="math inline">\(\hat{J}_{j}\)</span>, como:</p>
-<p><span class="math display">\[\hat{J}_{\pm} = \hat{J}_{i} \pm i \hat{J}_{j}   \tag{D2}\]</span></p>
-<p><br></p>
-<p><strong><em>Propisición 1</em></strong>: Sea <span class="math inline">\(\hat{\textbf{J}}\)</span> un operador de momento angular, entonces se cumplen las siguiente relaciones:</p>
-<ol type="1">
-<li><span class="math inline">\([\hat{J}_{z}, \hat{J}_{\pm}] = \pm \hbar \hat{J}_{\pm}\)</span></li>
-<li><span class="math inline">\([\hat{J}_{+}, \hat{J}_{-}] = 2\hbar\hat{J}_{z}\)</span></li>
-<li><span class="math inline">\([\hat{\textbf{J}}^{2}, \hat{J}_{\pm}] = 0\)</span></li>
-</ol>
+<p>The difference between <span class="math inline">\(\langle -, - \rangle\)</span> and <span class="math inline">\(\eta\)</span> is the dot product is a inner product (i.e is positive-definite) but the Minkowski metric is not. It’s a small difference between both, but thanks to that, the properties of both space are different. In the case of the Minkowski metric we need to distinguish between covariant and contravariant vectors but in the euclidean metric (the dot product) we don’t have the necesity of make the distintion, that’s why in a basic course of linear algebra (and physics) they don’t talk about dual space.</p>
 <p><br></p>
 <h5 class="subtitle is-5">
-+ Bibliografía
++ Bibliography
 </h5>
 <ol>
 <a name="NielsenChuang"></a>
